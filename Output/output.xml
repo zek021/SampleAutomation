@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231105 22:33:40.111" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\Users\Zek\PycharmProjects\AutomationExam\Tests">
+<suite id="s1-s1" name="Test1" source="C:\Users\Zek\PycharmProjects\AutomationExam\Tests\Test1.robot">
+<test id="s1-s1-t1" name="TC2: Verify Successful Form Submission" line="29">
+<kw name="Fill Out Application Form" library="LoginKeywords">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${email}</arg>
+<arg>${Password}</arg>
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${unit_house_no}</arg>
+<arg>${postal_code}</arg>
+<arg>${country}</arg>
+<arg>${file_path}</arg>
+<arg>${gender}</arg>
+<arg>${role}</arg>
+<arg>${skills}</arg>
+<arg>${objective_file}</arg>
+<kw name="Successful Login" library="LoginKeywords">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<kw name="Open My Browser" library="LoginKeywords">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231105 22:33:40.439" level="INFO">Opening browser 'chrome' to base url 'https://automationinterface1.front.staging.optimy.net/en/'.</msg>
+<status status="PASS" starttime="20231105 22:33:40.438" endtime="20231105 22:33:48.153"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231105 22:33:48.153" endtime="20231105 22:33:48.277"/>
+</kw>
+<status status="PASS" starttime="20231105 22:33:40.438" endtime="20231105 22:33:48.277"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231105 22:33:48.277" endtime="20231105 22:33:48.278"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${element_exist}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//*[@id="cookie-allow-all-button"]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//*[@id="cookie-allow-all-button"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231105 22:33:48.648" level="INFO">Element '//*[@id="cookie-allow-all-button"]' is displayed.</msg>
+<status status="PASS" starttime="20231105 22:33:48.278" endtime="20231105 22:33:48.648"/>
+</kw>
+<msg timestamp="20231105 22:33:48.649" level="INFO">${element_exist} = True</msg>
+<status status="PASS" starttime="20231105 22:33:48.278" endtime="20231105 22:33:48.649"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${element_exist} == True</arg>
+<arg>Click Accept All Cookies</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Accept All Cookies" library="LoginKeywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="cookie-allow-all-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231105 22:33:48.651" level="INFO">Clicking button '//*[@id="cookie-allow-all-button"]'.</msg>
+<status status="PASS" starttime="20231105 22:33:48.650" endtime="20231105 22:33:49.292"/>
+</kw>
+<status status="PASS" starttime="20231105 22:33:48.649" endtime="20231105 22:33:49.292"/>
+</kw>
+<status status="PASS" starttime="20231105 22:33:48.649" endtime="20231105 22:33:49.293"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>//*[@id="cookie-allow-all-button"]</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20231105 22:33:49.293" endtime="20231105 22:33:49.971"/>
+</kw>
+<kw name="Click Submit Application" library="LoginKeywords">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${submit_application}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231105 22:33:49.972" level="INFO">Clicking link 'css:div.page-main__content-wrapper&gt;a'.</msg>
+<status status="PASS" starttime="20231105 22:33:49.971" endtime="20231105 22:33:54.246"/>
+</kw>
+<status status="PASS" starttime="20231105 22:33:49.971" endtime="20231105 22:33:54.246"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${signin_email}</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231105 22:33:54.247" endtime="20231105 22:33:54.492"/>
+</kw>
+<kw name="Enter Username" library="LoginKeywords">
+<arg>${email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${signin_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231105 22:33:54.495" level="INFO">Typing text 'optimyautomationtester@gmail.com' into text field 'css:#login-email'.</msg>
+<status status="PASS" starttime="20231105 22:33:54.493" endtime="20231105 22:33:55.030"/>
+</kw>
+<status status="PASS" starttime="20231105 22:33:54.492" endtime="20231105 22:33:55.030"/>
+</kw>
+<kw name="Enter Password" library="LoginKeywords">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${signin_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231105 22:33:55.031" level="INFO">Typing text 'yRMhojb7' into text field 'css:input#login-password'.</msg>
+<status status="PASS" starttime="20231105 22:33:55.031" endtime="20231105 22:33:55.514"/>
+</kw>
+<status status="PASS" starttime="20231105 22:33:55.030" endtime="20231105 22:33:55.514"/>
+</kw>
+<kw name="Click Signin" library="LoginKeywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231105 22:33:55.517" level="INFO">Clicking button 'css:#login-form &gt; div.position-relative &gt; button'.</msg>
+<status status="PASS" starttime="20231105 22:33:55.515" endtime="20231105 22:33:59.514"/>
+</kw>
+<status status="PASS" starttime="20231105 22:33:55.515" endtime="20231105 22:33:59.514"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${submit_new_application}</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231105 22:33:59.514" endtime="20231105 22:33:59.765"/>
+</kw>
+<kw name="Click Submit New Application" library="LoginKeywords">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${submit_new_application}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231105 22:33:59.767" level="INFO">Clicking link 'css:section&gt;div&gt;a'.</msg>
+<status status="PASS" starttime="20231105 22:33:59.766" endtime="20231105 22:34:06.295"/>
+</kw>
+<status status="PASS" starttime="20231105 22:33:59.765" endtime="20231105 22:34:06.295"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Fill-out all forms -</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231105 22:34:06.405" level="INFO">Page title is 'Fill-out all forms -'.</msg>
+<status status="PASS" starttime="20231105 22:34:06.295" endtime="20231105 22:34:06.405"/>
+</kw>
+<status status="PASS" starttime="20231105 22:33:40.438" endtime="20231105 22:34:06.405"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${first_name_loc}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:06.406" level="INFO">Typing text 'John' into text field 'css:div#container_629d7b5a-f6a1-5a14-ac1d-21b2fafdbdef&gt;div&gt;input'.</msg>
+<status status="PASS" starttime="20231105 22:34:06.405" endtime="20231105 22:34:06.835"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${last_name_loc}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:06.836" level="INFO">Typing text 'Doe' into text field 'css:div#container_23e5e47e-bab1-5a1e-9929-f180182bda43&gt;div&gt;input'.</msg>
+<status status="PASS" starttime="20231105 22:34:06.835" endtime="20231105 22:34:07.327"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${house_no}</arg>
+<arg>${unit_house_no}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:07.328" level="INFO">Typing text '43' San Diego St Medford Ville' into text field 'css:div#container_c3f44a2e-72e9-587b-b88c-b5c9fbeed2db&gt;div&gt;textarea'.</msg>
+<status status="PASS" starttime="20231105 22:34:07.327" endtime="20231105 22:34:07.982"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${post_code}</arg>
+<arg>${postal_Code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:07.984" level="INFO">Typing text '1000' into text field 'css:div#container_e57df0b5-c2ad-514a-967f-ee8b962f5ed4&gt;div&gt;input'.</msg>
+<status status="PASS" starttime="20231105 22:34:07.983" endtime="20231105 22:34:08.433"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:ul#ui-id-1&gt;li&gt;a</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231105 22:34:08.433" endtime="20231105 22:34:09.307"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css:ul#ui-id-1&gt;li&gt;a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:09.308" level="INFO">Clicking link 'css:ul#ui-id-1&gt;li&gt;a'.</msg>
+<status status="PASS" starttime="20231105 22:34:09.307" endtime="20231105 22:34:09.689"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${post_code}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:09.690" level="INFO">Clicking element 'css:div#container_e57df0b5-c2ad-514a-967f-ee8b962f5ed4&gt;div&gt;input'.</msg>
+<status status="PASS" starttime="20231105 22:34:09.689" endtime="20231105 22:34:09.950"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${country_loc}</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231105 22:34:09.952" level="INFO">Selecting options from selection list 'css:div#container_7e595970-fc12-558c-9eaf-385735fcae6b&gt;div&gt;select' by label Philippines.</msg>
+<status status="PASS" starttime="20231105 22:34:09.950" endtime="20231105 22:34:10.910"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>css:#container_e3d17f2c-51d7-5950-b6f9-32580b006c48 &gt; fieldset &gt; legend &gt; span</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231105 22:34:10.910" endtime="20231105 22:34:11.434"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>${file_input}</arg>
+<arg>${file_path}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20231105 22:34:11.435" level="INFO">Sending C:\Users\Zek\PycharmProjects\AutomationExam\Data\sample.jpg to browser.</msg>
+<status status="PASS" starttime="20231105 22:34:11.434" endtime="20231105 22:34:11.744"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;Male&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:li#container_f3fa11a5-a516-5cec-9025-b940b1b113d0</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231105 22:34:11.745" endtime="20231105 22:34:11.745"/>
+</kw>
+<status status="NOT RUN" starttime="20231105 22:34:11.745" endtime="20231105 22:34:11.745"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${gender}&quot; == &quot;Female&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:li#container_514632f0-b9ec-5946-997e-f486fcd8276c</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231105 22:34:11.745" endtime="20231105 22:34:11.745"/>
+</kw>
+<status status="NOT RUN" starttime="20231105 22:34:11.745" endtime="20231105 22:34:11.745"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${gender}&quot; == &quot;Prefer not to answer&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:li#container_f9291e23-4c53-56d3-8115-45818912be01</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231105 22:34:11.746" endtime="20231105 22:34:11.746"/>
+</kw>
+<status status="NOT RUN" starttime="20231105 22:34:11.746" endtime="20231105 22:34:11.746"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:li#container_f9291e23-4c53-56d3-8115-45818912be01</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:11.747" level="INFO">Clicking element 'css:li#container_f9291e23-4c53-56d3-8115-45818912be01'.</msg>
+<status status="PASS" starttime="20231105 22:34:11.746" endtime="20231105 22:34:12.067"/>
+</kw>
+<status status="PASS" starttime="20231105 22:34:11.746" endtime="20231105 22:34:12.067"/>
+</branch>
+<status status="PASS" starttime="20231105 22:34:11.745" endtime="20231105 22:34:12.067"/>
+</if>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${applied_role}</arg>
+<arg>${role}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231105 22:34:12.068" level="INFO">Selecting options from selection list 'css:#field_f801d7d8-0762-5407-95f9-b8c3a793157c' by label Manual tester.</msg>
+<status status="PASS" starttime="20231105 22:34:12.067" endtime="20231105 22:34:13.091"/>
+</kw>
+<for flavor="IN">
+<var>${skills}</var>
+<value>@{skills}</value>
+<iter>
+<var name="${skills}">Java</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selected_skill}</var>
+<arg>${${skills}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231105 22:34:13.100" level="INFO">${selected_skill} = css:li#container_9ae096b7-77d8-5dca-98fd-c19b4bf28688</msg>
+<status status="PASS" starttime="20231105 22:34:13.094" endtime="20231105 22:34:13.100"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${selected_skill}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231105 22:34:13.100" endtime="20231105 22:34:13.629"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selected_skill}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:13.630" level="INFO">Clicking element 'css:li#container_9ae096b7-77d8-5dca-98fd-c19b4bf28688'.</msg>
+<status status="PASS" starttime="20231105 22:34:13.629" endtime="20231105 22:34:13.978"/>
+</kw>
+<status status="PASS" starttime="20231105 22:34:13.093" endtime="20231105 22:34:13.978"/>
+</iter>
+<iter>
+<var name="${skills}">Python</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selected_skill}</var>
+<arg>${${skills}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231105 22:34:13.979" level="INFO">${selected_skill} = css:li#container_92dcaa01-633c-5db1-ac87-e003906567ea</msg>
+<status status="PASS" starttime="20231105 22:34:13.978" endtime="20231105 22:34:13.979"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${selected_skill}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231105 22:34:13.979" endtime="20231105 22:34:14.515"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selected_skill}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:14.517" level="INFO">Clicking element 'css:li#container_92dcaa01-633c-5db1-ac87-e003906567ea'.</msg>
+<status status="PASS" starttime="20231105 22:34:14.515" endtime="20231105 22:34:14.854"/>
+</kw>
+<status status="PASS" starttime="20231105 22:34:13.978" endtime="20231105 22:34:14.854"/>
+</iter>
+<iter>
+<var name="${skills}">Robot Framework</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${selected_skill}</var>
+<arg>${${skills}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231105 22:34:14.856" level="INFO">${selected_skill} = css:li#container_773e5289-f4b3-5d6d-ac81-5c99e2b39acd</msg>
+<status status="PASS" starttime="20231105 22:34:14.855" endtime="20231105 22:34:14.856"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${selected_skill}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231105 22:34:14.856" endtime="20231105 22:34:15.391"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selected_skill}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:15.393" level="INFO">Clicking element 'css:li#container_773e5289-f4b3-5d6d-ac81-5c99e2b39acd'.</msg>
+<status status="PASS" starttime="20231105 22:34:15.392" endtime="20231105 22:34:15.730"/>
+</kw>
+<status status="PASS" starttime="20231105 22:34:14.855" endtime="20231105 22:34:15.730"/>
+</iter>
+<status status="PASS" starttime="20231105 22:34:13.091" endtime="20231105 22:34:15.730"/>
+</for>
+<kw name="Get File" library="OperatingSystem">
+<var>${objective}</var>
+<arg>${objective_file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20231105 22:34:15.731" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Zek\PycharmProjects\AutomationExam\Data\Objective.txt"&gt;C:\Users\Zek\PycharmProjects\AutomationExam\Data\Objective.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20231105 22:34:15.751" level="INFO">${objective} = To secure a responsible position corresponding to my line of education, skills and knowledge that would provide me the necessary experience that focuses on Software Testing of different System Applica...</msg>
+<status status="PASS" starttime="20231105 22:34:15.730" endtime="20231105 22:34:15.751"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>css:div#cke_1_contents&gt;iframe</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231105 22:34:15.751" endtime="20231105 22:34:16.263"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css:div#cke_1_contents&gt;iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20231105 22:34:16.264" level="INFO">Selecting frame 'css:div#cke_1_contents&gt;iframe'.</msg>
+<status status="PASS" starttime="20231105 22:34:16.263" endtime="20231105 22:34:16.543"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:body</arg>
+<arg>${objective}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:16.545" level="INFO">Typing text 'To secure a responsible position corresponding to my line of education, skills and knowledge that would provide me the necessary experience that focuses on Software Testing of different System Applications essential for future career development' into text field 'css:body'.</msg>
+<status status="PASS" starttime="20231105 22:34:16.543" endtime="20231105 22:34:17.564"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20231105 22:34:17.564" endtime="20231105 22:34:17.670"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${next_bttn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:17.670" level="INFO">Clicking button 'css:button#navButtonNext'.</msg>
+<status status="PASS" starttime="20231105 22:34:17.670" endtime="20231105 22:34:18.318"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${next_bttn}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20231105 22:34:18.318" endtime="20231105 22:34:23.923"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${submit2}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231105 22:34:23.923" endtime="20231105 22:34:24.178"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submit2}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231105 22:34:24.179" level="INFO">Clicking button 'css:div&gt;form&gt;div:nth-of-type(2)&gt;div:nth-of-type(2)&gt;div:nth-of-type(3)&gt;div:nth-of-type(2)&gt;button'.</msg>
+<status status="PASS" starttime="20231105 22:34:24.178" endtime="20231105 22:34:24.799"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231105 22:34:29.799" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231105 22:34:24.799" endtime="20231105 22:34:29.799"/>
+</kw>
+<status status="PASS" starttime="20231105 22:33:40.436" endtime="20231105 22:34:29.799"/>
+</kw>
+<tag>FormSubmission</tag>
+<tag>LoginTest</tag>
+<status status="PASS" starttime="20231105 22:33:40.435" endtime="20231105 22:34:29.801"/>
+</test>
+<doc>Run Command: robot -d Output -i LoginTest Tests</doc>
+<status status="PASS" starttime="20231105 22:33:40.140" endtime="20231105 22:34:29.805"/>
+</suite>
+<status status="PASS" starttime="20231105 22:33:40.113" endtime="20231105 22:34:29.807"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">FormSubmission</stat>
+<stat pass="1" fail="0" skip="0">LoginTest</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test1">Tests.Test1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
